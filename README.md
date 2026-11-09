@@ -11,7 +11,7 @@
 
 ## Published Website
 
-https://github.com/alyssaaaajo/mondelojodme/
+https://alyssaaaajo.github.io/mondelojodme/
 
 ## Hosting Note
 
