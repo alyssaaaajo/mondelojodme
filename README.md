@@ -11,7 +11,7 @@
 
 ## Published Website
 
-https://YOUR-GITHUB-USERNAME.github.io/mondelojodme/
+https://github.com/alyssaaaajo/mondelojodme/
 
 ## Hosting Note
 
