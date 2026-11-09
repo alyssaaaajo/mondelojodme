@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSV to JSON Data Map Converter</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>CSV to JSON Data Map Converter</h1>
+    <p>Upload the student CSV file and convert each row using the required data map.</p>
+  </header>
+  <main>
+    <section class="student" aria-label="Student information">
+      <p><strong>Name:</strong> Joanna Alyssa Mondelo</p>
+      <p><strong>Schedule:</strong> MW 12:20 PM – 3:00 PM</p>
+    </section>
+
+    <h2>1. Upload CSV File</h2>
+    <div class="upload">
+      <strong>Select the provided exercise_datamap.csv file</strong>
+      <p class="hint">The conversion happens in your browser. Your file is not uploaded to an external service.</p>
+      <input id="csvFile" type="file" accept=".csv,text/csv">
+      <div id="status" class="status" role="status"></div>
+    </div>
+
+    <div class="actions">
+      <button id="convertBtn" disabled>Convert to JSON</button>
+      <button id="downloadBtn" class="secondary" disabled>Download JSON</button>
+    </div>
+
+    <section id="previewSection" hidden>
+      <h2>2. Converted JSON Output</h2>
+      <p id="recordCount" class="hint"></p>
+      <pre id="jsonOutput"></pre>
+      <h2>3. Data Preview</h2>
+      <div class="table-wrap">
+        <table>
+          <thead><tr>
+            <th>studentId</th><th>firstName</th><th>lastName</th><th>program</th>
+            <th>yearLevel</th><th>emailAddress</th><th>outstandingBalance</th>
+          </tr></thead>
+          <tbody id="previewBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <h2>Data Transformation Rules</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>CSV Field</th><th>JSON Field</th><th>Transformation</th></tr></thead>
+        <tbody>
+          <tr><td>student_id</td><td>studentId</td><td>Convert to integer</td></tr>
+          <tr><td>first_name</td><td>firstName</td><td>Capitalize first letter</td></tr>
+          <tr><td>last_name</td><td>lastName</td><td>Capitalize first letter</td></tr>
+          <tr><td>course</td><td>program</td><td>BSIT → Bachelor of Science in Information Technology; BSCS → Bachelor of Science in Computer Science</td></tr>
+          <tr><td>year_level</td><td>yearLevel</td><td>Convert to integer</td></tr>
+          <tr><td>email</td><td>emailAddress</td><td>Convert to lowercase</td></tr>
+          <tr><td>tuition_balance</td><td>outstandingBalance</td><td>Convert to number with 2 decimal places</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+  <footer>CSV to JSON Data Map Exercise · Joanna Alyssa Mondelo</footer>
+</div>
+
+<script src="./script.js" defer></script>
+</body>
+</html>
